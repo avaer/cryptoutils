@@ -31,7 +31,7 @@ const api = {
       },
       {
         shortName: 'ST',
-        value: St
+        value: ST
       },
       {
         name: 'localityName',
