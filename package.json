@@ -1,6 +1,6 @@
 {
   "name": "cryptoutils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Certificate generation utils",
   "main": "index.js",
   "scripts": {
