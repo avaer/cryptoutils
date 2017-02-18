@@ -11,7 +11,7 @@ const api = {
   generateCert(keys, opts) {
     const publicKey = pki.publicKeyFromPem(keys.publicKey);
     const privateKey = pki.privateKeyFromPem(keys.privateKey);
-    const {commonName = 'zeo.sh', countryName = 'US', ST = 'California', localityName = 'San Francisco', organizationName = 'zeo.sh', OU = 'Dev'} = opts;
+    const {commonName = 'zeovr.io', countryName = 'US', ST = 'California', localityName = 'San Francisco', organizationName = 'Zeo VR', OU = 'Dev'} = opts;
 
     const cert = pki.createCertificate();
     cert.publicKey = publicKey;
