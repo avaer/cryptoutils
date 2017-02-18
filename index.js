@@ -77,18 +77,15 @@ const api = {
         emailCA: true,
         objCA: true
       },
-      /* {
+      {
         name: 'subjectAltName',
         altNames: [
           {
-            type: 6, // URI
-            value: 'http://example.org/webid#me'
-          }, {
-            type: 7, // IP
-            ip: '127.0.0.1'
+            type: 2, // DNS
+            value: '*.' + commonName
           }
         ]
-      }, */
+      },
       {
         name: 'subjectKeyIdentifier'
       }
