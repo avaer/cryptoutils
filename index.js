@@ -83,6 +83,10 @@ const api = {
           {
             type: 2, // DNS
             value: '*.' + commonName
+          },
+          {
+            type: 7, // IP
+            ip: '127.0.0.1'
           }
         ]
       },
