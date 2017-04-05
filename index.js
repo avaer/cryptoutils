@@ -11,7 +11,15 @@ const api = {
   generateCert(keys, opts) {
     const publicKey = pki.publicKeyFromPem(keys.publicKey);
     const privateKey = pki.privateKeyFromPem(keys.privateKey);
-    const {commonName = 'zeovr.io', countryName = 'US', ST = 'California', localityName = 'San Francisco', organizationName = 'Zeo VR', OU = 'Dev'} = opts;
+    const {
+      commonName = 'zeovr.io',
+      countryName = 'US',
+      ST = 'California',
+      localityName = 'San Francisco',
+      organizationName = 'Zeo VR',
+      OU = 'Dev',
+      subjectAltNames = [],
+    } = opts;
 
     const cert = pki.createCertificate();
     cert.publicKey = publicKey;
@@ -79,16 +87,15 @@ const api = {
       },
       {
         name: 'subjectAltName',
-        altNames: [
-          {
-            type: 2, // DNS
-            value: '*.' + commonName
-          },
+        altNames: subjectAltNames.map(subjectAltName => ({
+          type: 2, // DNS
+          value: subjectAltName
+        })).concat([
           {
             type: 7, // IP
             ip: '127.0.0.1'
           }
-        ]
+        ])
       },
       {
         name: 'subjectKeyIdentifier'
