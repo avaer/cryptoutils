@@ -26,7 +26,7 @@ const api = {
     cert.serialNumber = '01';
     cert.validity.notBefore = new Date();
     cert.validity.notAfter = new Date();
-    cert.validity.notAfter.setFullYear(cert.validity.notBefore.getFullYear() + 1);
+    cert.validity.notAfter.setFullYear(cert.validity.notBefore.getFullYear() + 10);
 
     const attrs = [
       {
