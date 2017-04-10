@@ -1,5 +1,5 @@
 const forge = require('node-forge');
-const pki = forge.pki;
+const {pki, md} = forge;
 
 const api = {
   generateKeys() {
@@ -104,7 +104,7 @@ const api = {
     cert.setSubject(attrs);
     cert.setIssuer(attrs);
     cert.setExtensions(extensions);
-    cert.sign(privateKey);
+    cert.sign(privateKey, md.sha256.create());
 
     const pemCert = pki.certificateToPem(cert);
     return pemCert;
